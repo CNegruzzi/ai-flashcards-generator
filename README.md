@@ -2,6 +2,8 @@
 
 An interactive React + TypeScript app that converts short study notes into concise flashcards using an LLM. The project demonstrates frontend state management, a small typed component library, and a clear example of integrating with an LLM (via an OpenAI-compatible client) to generate structured JSON flashcards.
 
+Live demo: [https://cnegruzzi.github.io/ai-flashcards-generator/]
+
 **Why this project**: It solves a common study workflow — turning notes into active recall prompts — and showcases practical skills interviewers look for: TypeScript, React component design, async API integration, and safe handling of model outputs.
 
 **Features**
