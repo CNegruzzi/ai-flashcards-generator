@@ -1,0 +1,104 @@
+.flashcard {
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+}
+
+.question {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.answer {
+  font-size: 0.95rem;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  margin-bottom: 8px;
+}
+
+.toggleButton {
+  padding: 6px 12px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #303030;
+  color: #fff;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #454444;
+  }
+}
+
+.markButtons {
+  margin-bottom: 8px;
+
+  button {
+    padding: 6px 12px;
+    margin-right: 6px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+
+    &.correct {
+      background-color: #4caf50;
+      color: #fff;
+
+      &:hover {
+        background-color: #43a047;
+      }
+    }
+
+    &.incorrect {
+      background-color: #f44336;
+      color: #fff;
+
+      &:hover {
+        background-color: #e53935;
+      }
+    }
+  }
+}
+
+.status {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  &.correct {
+    background-color: #4caf50;
+    color: #fff;
+  }
+
+  &.incorrect {
+    background-color: #f44336;
+    color: #fff;
+  }
+
+  &.unanswered {
+    background-color: #ccc;
+    color: #fff;
+  }
+}
