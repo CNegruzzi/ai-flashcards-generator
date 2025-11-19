@@ -1,21 +1,28 @@
-import React from 'react';
-import './App.scss';
+import { useNotesStore } from './state/useNotesStore';
 
-interface Props {
-  onClick: () => void;
-  children: React.ReactNode;
-}
+import styles from './App.module.scss';
+import { NoteInput } from './components/NoteInput';
+import { NotesList } from './components/NoteList';
 
-export const Provider: React.FC<Props> = React.memo(({ onClick, children }) => (
-  <button type="button" onClick={onClick}>
-    {children}
-  </button>
-));
+export function App() {
+  const {
+    notes,
+    flashcards,
+    addNote,
+    setNotesFlashCards: setNoteFlashcards,
+  } = useNotesStore();
 
-export const App: React.FC = () => {
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>TodoList</Provider>
+    <div className={styles.main}>
+      <h1 className={styles.headerMain}>AI Flashcard Creator</h1>
+
+      <NoteInput addNote={addNote} />
+
+      <NotesList
+        notes={notes}
+        flashcards={flashcards}
+        setNoteFlashcards={setNoteFlashcards}
+      />
     </div>
   );
-};
+}
